@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+> HEAD
 [![HTML Version](https://img.shields.io/badge/HTML-5-red.svg)](https://www.w3.org/TR/html52/)
 [![CSS Version](https://img.shields.io/badge/CSS-3-blue.svg)](https://www.w3.org/Style/CSS/specs.en.html)
 [![JavaScript Version](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://www.ecma-international.org/ecma-262/6.0/)
@@ -9,7 +9,7 @@
 
 
 
-#### 🌟live Demo :  [https://eat-spilt.netlify.app/](https://abdelrahman-omar.netlify.app/)
+#### 🌟live Demo :  [https://eat-spilt.netlify.app/](https://abdelrahman-omar.netlify.app/)](https://portfolio-chi-red-45.vercel.app/)
 
 
 ## Built With
