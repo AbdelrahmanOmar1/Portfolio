@@ -9,7 +9,7 @@
 
 
 
-#### 🌟live Demo :  [https://eat-spilt.netlify.app/](https://abdelrahman-omar.netlify.app/)](https://portfolio-chi-red-45.vercel.app/)
+#### 🌟live Demo : https://portfolio-chi-red-45.vercel.app/
 
 
 ## Built With
