@@ -1,0 +1,112 @@
+#projects {
+  padding: 7rem 0;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+}
+.project-card:first-child {
+  grid-column: 1/-1;
+}
+.project-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px var(--glow2);
+}
+.project-thumb {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg2), var(--surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.project-card:first-child .project-thumb {
+  height: 260px;
+}
+.project-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, var(--bg1));
+}
+.project-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+.project-year {
+  font-size: 0.68rem;
+  color: var(--text3);
+}
+.project-type {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--accent3);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+.project-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.project-desc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.75;
+  flex: 1;
+}
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.project-tech {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--surface2);
+  color: var(--text3);
+  border: 1px solid var(--border);
+}
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.project-link {
+  font-size: 0.75rem;
+  color: var(--accent3);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.project-link:hover {
+  border-color: var(--accent2);
+  background: rgba(124, 58, 237, 0.1);
+}
