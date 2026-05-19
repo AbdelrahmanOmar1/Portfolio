@@ -8,7 +8,8 @@ function Galaxy() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    let W, H;
+    let W = 0,
+      H = 0;
     let stars = [];
     let shootingStars = [];
     let time = 0;
@@ -17,6 +18,7 @@ function Galaxy() {
     const resize = () => {
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
+      makeStars(220);
     };
 
     const makeStars = (n) => {
@@ -42,7 +44,6 @@ function Galaxy() {
           vy: Math.random() * 4 + 2,
           len: Math.random() * 80 + 60,
           life: 1,
-          alpha: 1,
         });
       }
     };
@@ -57,8 +58,8 @@ function Galaxy() {
       makeShooting();
 
       // ⭐ STARS
-      stars.forEach((s) => {
-        s.alpha = 0.3 + 0.6 * Math.abs(Math.sin(time * s.speed * 60 + s.phase));
+      for (let s of stars) {
+        s.alpha = 0.3 + 0.6 * Math.sin(time * s.speed * 60 + s.phase);
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
@@ -68,31 +69,29 @@ function Galaxy() {
           : `rgba(100,60,220,${s.alpha * 0.35})`;
 
         ctx.fill();
-      });
+      }
 
       // 🌠 SHOOTING STARS
       shootingStars = shootingStars.filter((s) => {
         s.x += s.vx;
         s.y += s.vy;
         s.life -= 0.02;
-        s.alpha = s.life;
 
         if (s.life <= 0) return false;
 
         const grad = ctx.createLinearGradient(
           s.x,
           s.y,
-          s.x - s.vx * (s.len / s.vx),
-          s.y - s.vy * (s.len / s.vx),
+          s.x - s.vx * 10,
+          s.y - s.vy * 10,
         );
 
         grad.addColorStop(
           0,
-          isDark
-            ? `rgba(192,132,252,${s.alpha})`
-            : `rgba(124,58,237,${s.alpha})`,
+          isDark ? `rgba(192,132,252,${s.life})` : `rgba(124,58,237,${s.life})`,
         );
-        grad.addColorStop(1, "rgba(0,0,0,0)");
+
+        grad.addColorStop(1, "transparent");
 
         ctx.beginPath();
         ctx.moveTo(s.x, s.y);
@@ -107,12 +106,9 @@ function Galaxy() {
       animationId = requestAnimationFrame(draw);
     };
 
-    // INIT
     resize();
-    makeStars(220);
-    draw();
-
     window.addEventListener("resize", resize);
+    draw();
 
     return () => {
       window.removeEventListener("resize", resize);
@@ -122,8 +118,8 @@ function Galaxy() {
 
   return (
     <>
-      <canvas id="galaxy" ref={canvasRef}></canvas>
-      <div className="nebula-bg"></div>
+      <canvas ref={canvasRef} className="galaxy-canvas" />
+      <div className="nebula-bg" />
     </>
   );
 }
