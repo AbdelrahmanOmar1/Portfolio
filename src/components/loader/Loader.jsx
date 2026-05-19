@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./Loader.css";
+import "./loader.css";
 
 function Loader({ onFinish }) {
   useEffect(() => {
