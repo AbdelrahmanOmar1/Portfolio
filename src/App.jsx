@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Loader from "./components/Loader/Loader";
+import Loader from "./components/loader/Loader";
 import Galaxy from "./components/layout/Galaxy";
 import NavBar from "./components/layout/NavBar";
 import Hero from "./components/sections/Hero";
